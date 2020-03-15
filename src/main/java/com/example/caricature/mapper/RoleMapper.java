@@ -1,6 +1,9 @@
 package com.example.caricature.mapper;
 
-import com.example.caricature.entity.Role;import java.util.List;
+import com.example.caricature.entity.Role;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface RoleMapper {
     int deleteByPrimaryKey(String id);
@@ -11,9 +14,9 @@ public interface RoleMapper {
 
     Role selectByPrimaryKey(String id);
 
-    int updateByPrimaryKeySelective(Role record);
 
-    int updateByPrimaryKey(Role record);
+    int updateByPrimaryKey(@Param("record") Role record);
 
     List<Role> selectByAll(Role role);
+
 }

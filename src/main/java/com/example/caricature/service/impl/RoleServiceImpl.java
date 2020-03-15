@@ -35,11 +35,6 @@ public class RoleServiceImpl implements RoleService {
     }
 
     @Override
-    public int updateByPrimaryKeySelective(Role record) {
-        return roleMapper.updateByPrimaryKeySelective(record);
-    }
-
-    @Override
     public int updateByPrimaryKey(Role record) {
         return roleMapper.updateByPrimaryKey(record);
     }

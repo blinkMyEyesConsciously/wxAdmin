@@ -61,19 +61,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.example.caricature.entity.Role">
-    <!--@mbg.generated-->
-    update role
-    <set>
-      <if test="name != null">
-        `name` = #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="addTime != null">
-        add_time = curdate(),
-      </if>
-    </set>
-    where id = #{id,jdbcType=VARCHAR}
-  </update>
+
   <update id="updateByPrimaryKey" parameterType="com.example.caricature.entity.Role">
     <!--@mbg.generated-->
     update role

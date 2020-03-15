@@ -15,8 +15,6 @@ public interface RoleService {
 
     Role selectByPrimaryKey(String id);
 
-    int updateByPrimaryKeySelective(Role record);
-
     int updateByPrimaryKey(Role record);
 
     List<Role> queryAll();

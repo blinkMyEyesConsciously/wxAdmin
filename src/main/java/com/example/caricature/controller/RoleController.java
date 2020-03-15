@@ -26,17 +26,32 @@ public class RoleController {
      */
     @Resource
     private RoleServiceImpl roleService;
+    @org.springframework.beans.factory.annotation.Autowired
+    private com.example.caricature.mapper.RoleMapper roleMapper;
 
     /**
      * 通过主键查询单条数据
      *
      * @return List
      */
-    @ApiOperation(value = "获取所有权限")
+    @ApiOperation(value = "获取所有权限列表")
     @PostMapping("select")
     public Result select() {
         List<Role> list = roleService.queryAll();
         return new Result(ResultStatusCode.OK, list);
+    }
+
+    @ApiOperation(value = "修改权限")
+    @PostMapping("unData")
+    public Result unData(Role role) {
+
+        int i = roleService.updateByPrimaryKey(role);
+        if (i==1){
+            return new Result(ResultStatusCode.OK);
+        }else {
+            return new Result(ResultStatusCode.SYSTEM_ERR);
+        }
+
     }
 
 
