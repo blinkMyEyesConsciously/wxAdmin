@@ -1,10 +1,12 @@
 package com.example.caricature.service.impl;
 
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
-import com.example.caricature.mapper.UserRoleMapper;
 import com.example.caricature.entity.UserRole;
+import com.example.caricature.mapper.UserRoleMapper;
 import com.example.caricature.service.UserRoleService;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class UserRoleServiceImpl implements UserRoleService {
@@ -41,9 +43,13 @@ public class UserRoleServiceImpl implements UserRoleService {
     public int updateByPrimaryKey(UserRole record) {
         return userRoleMapper.updateByPrimaryKey(record);
     }
-
+    @Override
     public int queryById(String id) {
         return 0;
+    }
+    @Override
+    public List<UserRole> selectByAll(UserRole userRole) {
+        return userRoleMapper.selectByAll(userRole);
     }
 }
 

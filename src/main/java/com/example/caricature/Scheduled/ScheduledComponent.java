@@ -8,6 +8,6 @@ import org.springframework.stereotype.Component;
 public class ScheduledComponent {
     @Scheduled(cron = "0/5 * * * * ? ")
     public void wxPolling() {
-    log.info("我打印了");
+//    log.info("我打印了");
     }
 }

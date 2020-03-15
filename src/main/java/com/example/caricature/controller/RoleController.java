@@ -1,11 +1,13 @@
 package com.example.caricature.controller;
 
 import com.example.caricature.entity.Role;
+import com.example.caricature.mapper.RoleMapper;
 import com.example.caricature.service.impl.RoleServiceImpl;
 import com.example.caricature.sys.enums.ResultStatusCode;
 import com.example.caricature.sys.vo.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -26,8 +28,8 @@ public class RoleController {
      */
     @Resource
     private RoleServiceImpl roleService;
-    @org.springframework.beans.factory.annotation.Autowired
-    private com.example.caricature.mapper.RoleMapper roleMapper;
+    @Autowired
+    private RoleMapper roleMapper;
 
     /**
      * 通过主键查询单条数据

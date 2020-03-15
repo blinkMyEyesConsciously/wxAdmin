@@ -2,6 +2,8 @@ package com.example.caricature.service;
 
 import com.example.caricature.entity.UserRole;
 
+import java.util.List;
+
 public interface UserRoleService {
 
 
@@ -17,5 +19,8 @@ public interface UserRoleService {
 
     int updateByPrimaryKey(UserRole record);
 
+    int queryById(String id);
+
+    List<UserRole> selectByAll(UserRole userRole);
 }
 

@@ -1,11 +1,11 @@
 package com.example.caricature.service.impl;
 
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
-import com.example.caricature.mapper.RoleMapper;
 import com.example.caricature.entity.Role;
+import com.example.caricature.mapper.RoleMapper;
 import com.example.caricature.service.RoleService;
+import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 @Service

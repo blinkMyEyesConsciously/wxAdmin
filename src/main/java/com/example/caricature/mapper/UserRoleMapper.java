@@ -1,4 +1,7 @@
 package com.example.caricature.mapper;
+import org.apache.ibatis.annotations.Param;
+import java.util.List;
+import java.util.Date;
 
 import com.example.caricature.entity.UserRole;
 
@@ -14,4 +17,7 @@ public interface UserRoleMapper {
     int updateByPrimaryKeySelective(UserRole record);
 
     int updateByPrimaryKey(UserRole record);
+    List<UserRole> selectByAll(UserRole userRole);
+
+
 }

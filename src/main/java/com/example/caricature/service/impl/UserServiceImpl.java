@@ -1,22 +1,33 @@
 package com.example.caricature.service.impl;
 
-import com.example.caricature.sys.enums.ResultStatusCode;
-import com.example.caricature.sys.vo.Result;
-import com.github.pagehelper.PageInfo;
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
 import com.example.caricature.entity.User;
 import com.example.caricature.mapper.UserMapper;
 import com.example.caricature.service.UserService;
+import com.example.caricature.sys.enums.ResultStatusCode;
+import com.example.caricature.sys.vo.Result;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import javax.annotation.Resource;
+import java.util.Arrays;
+import java.util.List;
+
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
     @Resource
     private UserMapper userMapper;
 
     @Override
-    public int deleteByPrimaryKey(String id) {
-        return userMapper.deleteByPrimaryKey(id);
+    @Transactional
+    public int deleteByPrimaryKey(String ids) {
+        List<String> list = Arrays.asList(ids.split(","));
+        for (String s : list) {
+            userMapper.deleteByPrimaryKey(s);
+
+
+        }
+        return 0;
     }
 
     @Override
@@ -45,7 +56,7 @@ public class UserServiceImpl implements UserService{
     }
 
     public int selectAll() {
-        return  0;
+        return 0;
     }
 
     public Result login(String userName, String passWord) {

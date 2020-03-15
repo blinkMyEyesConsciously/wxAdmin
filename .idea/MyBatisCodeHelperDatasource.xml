@@ -57,6 +57,18 @@
                 </TableGenerateConfig>
               </value>
             </entry>
+            <entry key="wxAdmin:cookies">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="" />
+                  <option name="javaModelName" value="Cookies" />
+                  <option name="moduleName" value="caricature" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
             <entry key="wxAdmin:on_line">
               <value>
                 <TableGenerateConfig>
